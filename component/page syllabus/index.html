@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Listing Website</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header {
+        background-color: #2ac1bc;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      .search-container {
+        background-color: #2ac1bc;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .search-bar {
+        margin: 0 auto;
+        max-width: 800px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .search-bar input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .search-bar button {
+        padding: 10px 20px;
+        background-color: white;
+        color: #2ac1bc;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .sort-container {
+        margin: 20px;
+      }
+
+      .courses {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .course-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        cursor: pointer; /* Menentukan bahwa kursus dapat diklik */
+      }
+
+      .course-card:hover {
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Efek hover */
+        transform: scale(1.02); /* Membuat efek zoom sedikit */
+      }
+
+      .course-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+
+      .course-card .content {
+        padding: 15px;
+      }
+
+      .course-card h3 {
+        margin: 0 0 10px;
+        font-size: 18px;
+      }
+
+      .course-card p {
+        margin: 0 0 10px;
+        font-size: 14px;
+        color: #555;
+      }
+
+      .course-card .price {
+        color: #2ac1bc;
+        font-weight: bold;
+      }
+
+      .no-results {
+        text-align: center;
+        color: #555;
+        font-size: 16px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Cari Kelas yang Kamu Pelajari</h1>
+      <p>Lebih dari 250+ kelas yang dapat kamu pelajari di sini</p>
+    </header>
+
+    <div class="search-container">
+      <div class="search-bar">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Cari kelas yang kamu butuhkan..."
+        />
+        <button onclick="searchCourses()">Cari</button>
+      </div>
+    </div>
+
+    <div class="sort-container">
+      <label for="sort-level">Level:</label>
+      <select id="sort-level" onchange="sortCourses()">
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+      </select>
+
+      <label for="sort-category">Kategori:</label>
+      <select id="sort-category" onchange="sortCourses()">
+        <option value="popular">Kelas Populer</option>
+        <option value="newest">Kelas Terbaru</option>
+        <option value="oldest">Kelas Terlama</option>
+      </select>
+
+      <label for="sort-price">Harga:</label>
+      <select id="sort-price" onchange="sortCourses()">
+        <option value="highest">Harga Tertinggi</option>
+        <option value="lowest">Harga Terendah</option>
+      </select>
+    </div>
+
+    <div class="courses" id="courses">
+      <div
+        class="course-card"
+        data-popular="1"
+        data-price="159000"
+        data-level="beginner"
+        data-duration="120"
+      >
+        <img src="https://via.placeholder.com/300x150" alt="Course Image" />
+        <div class="content">
+          <h3>Membuat Website Crowdfunding</h3>
+          <p>Level: Beginner</p>
+          <p>Durasi: 2 Jam</p>
+          <p class="price">Rp 159.000</p>
+        </div>
+      </div>
+      <div
+        class="course-card"
+        data-popular="3"
+        data-price="299000"
+        data-level="beginner"
+        data-duration="60"
+      >
+        <img src="https://via.placeholder.com/300x150" alt="Course Image" />
+        <div class="content">
+          <h3>Membuat Website E-Wallet</h3>
+          <p>Level: Beginner</p>
+          <p>Durasi: 1 Jam</p>
+          <p class="price">Rp 299.000</p>
+        </div>
+      </div>
+      <div
+        class="course-card"
+        data-popular="2"
+        data-price="249000"
+        data-level="intermediate"
+        data-duration="180"
+      >
+        <img src="https://via.placeholder.com/300x150" alt="Course Image" />
+        <div class="content">
+          <h3>Pengembangan Web Fullstack</h3>
+          <p>Level: Intermediate</p>
+          <p>Durasi: 3 Jam</p>
+          <p class="price">Rp 249.000</p>
+        </div>
+      </div>
+      <div
+        class="course-card"
+        data-popular="4"
+        data-price="199000"
+        data-level="beginner"
+        data-duration="120"
+      >
+        <img src="https://via.placeholder.com/300x150" alt="Course Image" />
+        <div class="content">
+          <h3>Belajar Dasar JavaScript</h3>
+          <p>Level: Beginner</p>
+          <p>Durasi: 2 Jam</p>
+          <p class="price">Rp 199.000</p>
+        </div>
+      </div>
+      <div
+        class="course-card"
+        data-popular="5"
+        data-price="349000"
+        data-level="advanced"
+        data-duration="240"
+      >
+        <img src="https://via.placeholder.com/300x150" alt="Course Image" />
+        <div class="content">
+          <h3>Advanced React Techniques</h3>
+          <p>Level: Advanced</p>
+          <p>Durasi: 4 Jam</p>
+          <p class="price">Rp 349.000</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("search-input")
+        .addEventListener("keypress", (event) => {
+          if (event.keyCode === 13) {
+            searchCourses();
+          }
+        });
+      // Menambahkan event listener pada setiap kursus card
+      const courseCards = document.querySelectorAll(".course-card");
+
+      courseCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          // Anda dapat mengganti dengan fungsi yang ingin dilakukan saat kursus card diklik
+          alert(
+            "Kursus " + card.querySelector("h3").textContent + " telah diklik!"
+          );
+        });
+      });
+
+      function sortCourses() {
+        const levelSort = document.getElementById("sort-level").value;
+        const categorySort = document.getElementById("sort-category").value;
+        const priceSort = document.getElementById("sort-price").value;
+
+        const coursesContainer = document.getElementById("courses");
+        const courses = Array.from(coursesContainer.children);
+
+        courses.sort((a, b) => {
+          if (levelSort && a.dataset.level !== b.dataset.level) {
+            return a.dataset.level.localeCompare(b.dataset.level);
+          }
+
+          if (categorySort === "popular") {
+            return a.dataset.popular - b.dataset.popular;
+          } else if (categorySort === "newest") {
+            return b.dataset.duration - a.dataset.duration;
+          } else if (categorySort === "oldest") {
+            return a.dataset.duration - b.dataset.duration;
+          }
+
+          if (priceSort === "highest") {
+            return b.dataset.price - a.dataset.price;
+          } else if (priceSort === "lowest") {
+            return a.dataset.price - b.dataset.price;
+          }
+        });
+
+        courses.forEach((course) => coursesContainer.appendChild(course));
+      }
+
+      function searchCourses() {
+        const searchInput = document
+          .getElementById("search-input")
+          .value.toLowerCase();
+        // Menambahkan pengecekan jika input pencarian kosong
+        if (searchInput === "") {
+          const noResultsMessage = document.querySelector(".no-results");
+          if (noResultsMessage) {
+            noResultsMessage.remove();
+          }
+          const courses = document.querySelectorAll(".course-card");
+          courses.forEach((course) => {
+            course.style.display = "flex";
+          });
+          return;
+        }
+
+        const courses = document.querySelectorAll(".course-card");
+        const coursesContainer = document.getElementById("courses");
+        let found = false;
+
+        courses.forEach((course) => {
+          const title = course.querySelector("h3").textContent.toLowerCase();
+          const level = course
+            .querySelector("p:nth-of-type(1)")
+            .textContent.toLowerCase();
+          const duration = course
+            .querySelector("p:nth-of-type(2)")
+            .textContent.toLowerCase();
+
+          if (
+            title.includes(searchInput) ||
+            level.includes(searchInput) ||
+            duration.includes(searchInput)
+          ) {
+            course.style.display = "flex";
+            found = true;
+          } else {
+            course.style.display = "none";
+          }
+        });
+
+        const noResultsMessage = document.querySelector(".no-results");
+        if (!found) {
+          if (!noResultsMessage) {
+            const message = document.createElement("div");
+            message.className = "no-results";
+            message.textContent = `Hasil pencarian dengan kata kunci "${searchInput}" tidak ditemukan`;
+            coursesContainer.appendChild(message);
+          } else {
+            noResultsMessage.textContent = `Hasil pencarian dengan kata kunci "${searchInput}" tidak ditemukan`;
+          }
+        } else if (noResultsMessage) {
+          noResultsMessage.remove();
+        }
+      }
+    </script>
+  </body>
+</html>

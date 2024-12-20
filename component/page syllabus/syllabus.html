@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="syllabus.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+    <!-- Navigasi -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#" class="navbar-logo">
+          <img src="img/icon.svg" alt="" />
+        </a>
+      </div>
+      <div class="navbar-nav">
+        <ul>
+          <li name="home">
+            <a href="#"> Home </a>
+          </li>
+          <!-- Program & Fasilitas -->
+          <li name="program dan Fasilitas" class="dropdown-parent">
+            <a href="#">
+              Program & Fasilitas
+              <i>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  height="16"
+                >
+                  <path
+                    d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"
+                  ></path>
+                </svg>
+              </i>
+            </a>
+            <!-- Dropdown -->
+            <div class="dropdowns">
+              <div class="dropdown-list">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <img src="img/icon/forum.png" alt="Forum" />
+                      <span>Forum</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/icon/syllabus.png" alt="Syllabus" />
+                      <span>Syllabus</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/icon/internship.png" alt="Internship" />
+                      <span>Virtual Internship</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="dropdown-list">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <img src="img/icon/bootcamp.png" alt="Bootcamp" />
+                      <span>Bootcamp Comparasion</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/icon/payment.png" alt="Payment" />
+                      <span>Payment Option</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/icon/connect.png" alt="Alumni" />
+                      <span>Connect With Alumni</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- Ulasan -->
+          <li name="ulasan" class="dropdown-parent">
+            <a href="#">
+              Ulasan
+              <i>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  height="16"
+                >
+                  <path
+                    d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"
+                  ></path>
+                </svg>
+              </i>
+            </a>
+            <ul class="dropdown">
+              <li>
+                <a href="#">
+                  <img src="img/icon/rating mentor.png" alt="" />
+                  <span>Rating Mentor</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="img/icon/student rating.png" alt="" />
+                  <span>Rating Alumni</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Tentang Kami -->
+          <li name="aboutme" class="dropdown-parent">
+            <a href="#">
+              Tentang Kami
+              <i>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  height="16"
+                >
+                  <path
+                    d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"
+                  ></path>
+                </svg>
+              </i>
+            </a>
+            <ul class="dropdown">
+              <li>
+                <a href="#">
+                  <img src="img/icon/tentang website.png" alt="" />
+                  <span>Tentang Website</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="img/icon/loker.png" alt="" />
+                  <span>Lowongan Kerja</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-extra">
+        <div class="navbar-login">
+          <a href="../Registration Page/registration.html" class="register-link"
+            >Daftar</a
+          >
+          <a href="../Login Page/login.html" class="login">Login</a>
+        </div>
+        <div id="hamburger-menu"><i data-feather="menu"></i></div>
+      </div>
+    </nav>
+    <main class="hero">
+      <section class="hero-container">
+        <div class="hero-fill">
+          <section class="searching-container">
+            <div class="heading">
+              <h1>Cari Kelas yang Kamu Pelajari</h1>
+              <p>Lebih dari 250+ kelas yang dapat kamu pelajari di sini</p>
+            </div>
+            <div class="search-container">
+              <div class="search-bar">
+                <input
+                  type="text"
+                  id="search-input"
+                  placeholder="Cari kelas yang kamu butuhkan..."
+                />
+                <button onclick="searchCourses()">Cari</button>
+              </div>
+            </div>
+          </section>
+          <section class="sort-container">
+            <div class="sort-level">
+              <label for="sort-level">Level:</label>
+              <select id="sort-level" onchange="sortCourses()">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </div>
+            <div class="sort-class">
+              <label for="sort-category">Kategori:</label>
+              <select id="sort-category" onchange="sortCourses()">
+                <option value="popular">Kelas Populer</option>
+                <option value="newest">Kelas Terbaru</option>
+                <option value="oldest">Kelas Terlama</option>
+              </select>
+            </div>
+            <div class="sort-price">
+              <label for="sort-price">Harga:</label>
+              <select id="sort-price" onchange="sortCourses()">
+                <option value="highest">Harga Tertinggi</option>
+                <option value="lowest">Harga Terendah</option>
+              </select>
+            </div>
+          </section>
+          <section class="courses-container">
+            <div class="courses" id="courses">
+              <div
+                class="course-card"
+                data-popular="1"
+                data-price="159000"
+                data-level="beginner"
+                data-duration="120"
+              >
+                <img
+                  src="https://via.placeholder.com/300x150"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <h3>Membuat Website Crowdfunding</h3>
+                  <p>Level: Beginner</p>
+                  <p>Durasi: 2 Jam</p>
+                  <p class="price">Rp 159.000</p>
+                </div>
+              </div>
+              <div
+                class="course-card"
+                data-popular="3"
+                data-price="299000"
+                data-level="beginner"
+                data-duration="60"
+              >
+                <img
+                  src="https://via.placeholder.com/300x150"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <h3>Membuat Website E-Wallet</h3>
+                  <p>Level: Beginner</p>
+                  <p>Durasi: 1 Jam</p>
+                  <p class="price">Rp 299.000</p>
+                </div>
+              </div>
+              <div
+                class="course-card"
+                data-popular="2"
+                data-price="249000"
+                data-level="intermediate"
+                data-duration="180"
+              >
+                <img
+                  src="https://via.placeholder.com/300x150"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <h3>Pengembangan Web Fullstack</h3>
+                  <p>Level: Intermediate</p>
+                  <p>Durasi: 3 Jam</p>
+                  <p class="price">Rp 249.000</p>
+                </div>
+              </div>
+              <div
+                class="course-card"
+                data-popular="4"
+                data-price="199000"
+                data-level="beginner"
+                data-duration="120"
+              >
+                <img
+                  src="https://via.placeholder.com/300x150"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <h3>Belajar Dasar JavaScript</h3>
+                  <p>Level: Beginner</p>
+                  <p>Durasi: 2 Jam</p>
+                  <p class="price">Rp 199.000</p>
+                </div>
+              </div>
+              <div
+                class="course-card"
+                data-popular="5"
+                data-price="349000"
+                data-level="advanced"
+                data-duration="240"
+              >
+                <img
+                  src="https://via.placeholder.com/300x150"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <h3>Advanced React Techniques</h3>
+                  <p>Level: Advanced</p>
+                  <p>Durasi: 4 Jam</p>
+                  <p class="price">Rp 349.000</p>
+                </div>
+              </div>
+              <div
+                class="course-card"
+                data-popular="5"
+                data-price="349000"
+                data-level="advanced"
+                data-duration="240"
+              >
+                <img
+                  src="https://via.placeholder.com/300x150"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <h3>Advanced React Techniques</h3>
+                  <p>Level: Advanced</p>
+                  <p>Durasi: 4 Jam</p>
+                  <p class="price">Rp 349.000</p>
+                </div>
+              </div>
+              <div
+                class="course-card"
+                data-popular="5"
+                data-price="349000"
+                data-level="advanced"
+                data-duration="240"
+              >
+                <img
+                  src="https://via.placeholder.com/300x150"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <h3>Advanced React Techniques</h3>
+                  <p>Level: Advanced</p>
+                  <p>Durasi: 4 Jam</p>
+                  <p class="price">Rp 349.000</p>
+                </div>
+              </div>
+              <div
+                class="course-card"
+                data-popular="1"
+                data-price="159000"
+                data-level="beginner"
+                data-duration="120"
+              >
+                <img
+                  src="https://via.placeholder.com/300x150"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <h3>Membuat Website Crowdfunding</h3>
+                  <p>Level: Beginner</p>
+                  <p>Durasi: 2 Jam</p>
+                  <p class="price">Rp 159.000</p>
+                </div>
+              </div>
+              <div
+                class="course-card"
+                data-popular="3"
+                data-price="299000"
+                data-level="beginner"
+                data-duration="60"
+              >
+                <img
+                  src="https://via.placeholder.com/300x150"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <h3>Membuat Website E-Wallet</h3>
+                  <p>Level: Beginner</p>
+                  <p>Durasi: 1 Jam</p>
+                  <p class="price">Rp 299.000</p>
+                </div>
+              </div>
+              <div
+                class="course-card"
+                data-popular="2"
+                data-price="249000"
+                data-level="intermediate"
+                data-duration="180"
+              >
+                <img
+                  src="https://via.placeholder.com/300x150"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <h3>Pengembangan Web Fullstack</h3>
+                  <p>Level: Intermediate</p>
+                  <p>Durasi: 3 Jam</p>
+                  <p class="price">Rp 249.000</p>
+                </div>
+              </div>
+              <div
+                class="course-card"
+                data-popular="4"
+                data-price="199000"
+                data-level="beginner"
+                data-duration="120"
+              >
+                <img
+                  src="https://via.placeholder.com/300x150"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <h3>Belajar Dasar JavaScript</h3>
+                  <p>Level: Beginner</p>
+                  <p>Durasi: 2 Jam</p>
+                  <p class="price">Rp 199.000</p>
+                </div>
+              </div>
+              <div
+                class="course-card"
+                data-popular="5"
+                data-price="349000"
+                data-level="advanced"
+                data-duration="240"
+              >
+                <img
+                  src="https://via.placeholder.com/300x150"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <h3>Advanced React Techniques</h3>
+                  <p>Level: Advanced</p>
+                  <p>Durasi: 4 Jam</p>
+                  <p class="price">Rp 349.000</p>
+                </div>
+              </div>
+              <div
+                class="course-card"
+                data-popular="5"
+                data-price="349000"
+                data-level="advanced"
+                data-duration="240"
+              >
+                <img
+                  src="https://via.placeholder.com/300x150"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <h3>Advanced React Techniques</h3>
+                  <p>Level: Advanced</p>
+                  <p>Durasi: 4 Jam</p>
+                  <p class="price">Rp 349.000</p>
+                </div>
+              </div>
+              <div
+                class="course-card"
+                data-popular="5"
+                data-price="349000"
+                data-level="advanced"
+                data-duration="240"
+              >
+                <img
+                  src="https://via.placeholder.com/300x150"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <h3>Advanced React Techniques</h3>
+                  <p>Level: Advanced</p>
+                  <p>Durasi: 4 Jam</p>
+                  <p class="price">Rp 349.000</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      feather.replace();
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

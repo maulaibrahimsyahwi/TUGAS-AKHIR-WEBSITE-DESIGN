@@ -1,0 +1,472 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 10px 20px;
+  border-bottom: 0.2px solid rgb(0, 0, 0, 0.3);
+  color: white;
+  z-index: 99999;
+}
+
+.navbar-logo {
+  width: 20px;
+}
+.navbar-logo img {
+  margin: 10px 0 0 60px;
+  transform: scale(2);
+  width: 100px;
+  border-radius: 10px;
+  height: 30px;
+}
+
+.navbar-nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-nav li {
+  position: relative;
+}
+
+.navbar-nav ul li a {
+  color: black;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.navbar-nav ul li a:hover {
+  border-radius: 10px;
+  background: rgb(217, 59, 74, 0.2);
+}
+
+/* Dropdown */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar-logo {
+  color: black;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.navbar-nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-nav li {
+  position: relative;
+}
+
+.navbar-nav a {
+  color: black;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+}
+
+.navbar-nav a:hover {
+  background: #555;
+}
+
+/* Dropdown */
+.dropdowns,
+.dropdown {
+  display: none; /* Default tersembunyi */
+  position: absolute; /* Agar tidak mengganggu tata letak */
+  background-color: #fff; /* Latar belakang dropdown */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px;
+  border-radius: 5px;
+}
+.dropdown-parent a i svg {
+  width: 30px;
+  transform: rotate(0deg); /* Default position: points right */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+.dropdown-parent:hover a i svg {
+  fill: #d93b4a;
+  transform: rotate(-180deg); /* Rotate 180 degrees on hover */
+}
+.dropdown-parent:hover .dropdowns,
+.dropdown-parent:hover .dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdowns {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+}
+
+.dropdown-list ul {
+  list-style: none;
+}
+
+.dropdown-list ul li {
+  flex-basis: 45%; /* Adjust this value based on your layout preference */
+  margin-bottom: 10px;
+}
+/* Adjust for small screen or tight layout */
+@media (max-width: 768px) {
+  .dropdown-list ul li {
+    flex-basis: 100%; /* Stacks items vertically on smaller screens */
+  }
+}
+.dropdown-list span {
+  font-weight: 500;
+  color: #000;
+}
+.dropdown-list a {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-list img {
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.dropdown-list a:hover {
+  background-color: #ff6b6b;
+  border-radius: 10px;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.dropdown a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.dropdown img {
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.dropdown a:hover {
+  background-color: #ff6b6b;
+  border-radius: 10px;
+}
+
+/* Navbar Extra */
+
+.navbar-extra {
+  display: flex;
+  margin-right: 20px;
+  align-items: center;
+}
+.navbar-login {
+  font-size: 1.1rem;
+  margin-left: -60px;
+}
+.navbar-login a {
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  margin-left: 20px;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+.navbar-login .register-link {
+  font-weight: 600;
+  color: #000;
+}
+.navbar-login .register-link:hover {
+  background-color: #ff6b6b;
+  color: white;
+}
+.navbar-login .login {
+  background-color: #000;
+  color: white;
+  font-weight: 600;
+}
+.navbar-login .login:hover {
+  background-color: #ff6b6b;
+}
+#hamburger-menu {
+  margin: 5px 0 0 20px;
+  display: none;
+  color: #000;
+}
+/* Responsive navbar */
+/* komputer */
+@media (max-width: 1360px) {
+  .navbar-logo img {
+    transform: scale(1.5); /* Logo tetap terlihat jelas */
+  }
+  .navbar-nav a {
+    font-size: 16px;
+  }
+  .navbar-nav {
+    display: inline-flexbox;
+  }
+  .navbar-extra {
+    margin-right: 0;
+  }
+  .navbar-login {
+    display: block;
+  }
+}
+/* laptop */
+@media (max-width: 998px) {
+  #hamburger-menu {
+    display: block; /* Aktifkan menu hamburger */
+  }
+
+  .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 25rem;
+    height: 100vh;
+    overflow-y: auto;
+    transition: 0.4s;
+  }
+  .navbar-nav ul {
+    display: block;
+  }
+  .navbar-nav li {
+    border-bottom: 1px solid #ccc;
+  }
+  .navbar-nav ul li a:hover {
+    background-color: rgba(255, 107, 107, 0.7);
+    border-radius: 0;
+  }
+  .navbar-nav.active {
+    right: 0;
+  }
+  .navbar-extra {
+    gap: 10px;
+  }
+  .navbar-login {
+    flex-direction: row;
+    gap: 5px;
+  }
+  .dropdown {
+    flex-direction: column;
+  }
+  .dropdown-parent.active .dropdown {
+    display: flex;
+  }
+  .dropdown-parent a {
+    padding: 8px;
+    font-size: 14px;
+  }
+  .dropdowns {
+    flex-direction: column; /* Urut vertikal */
+    width: 100%;
+  }
+  .dropdown {
+    width: 100%;
+  }
+}
+
+/* tablet */
+@media (max-width: 578px) {
+  .navbar-logo img {
+    width: 50px;
+    height: auto;
+  }
+
+  .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 20rem;
+    height: 100vh;
+    transition: 0.4s;
+  }
+  .navbar-nav.active {
+    right: 0;
+  }
+  .navbar-extra {
+    gap: 5px;
+  }
+  .navbar-login {
+    display: none; /* Sembunyikan login/register */
+  }
+  .dropdown-list ul {
+    padding: 5px;
+  }
+  .dropdown-list span {
+    font-size: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .navbar-logo img {
+    width: 50px;
+    height: auto;
+  }
+
+  .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 15rem;
+    height: 100vh;
+    transition: 0.4s;
+  }
+  .navbar-nav.active {
+    right: 0;
+  }
+  .navbar-extra {
+    gap: 5px;
+  }
+  .navbar-login {
+    display: none; /* Sembunyikan login/register */
+  }
+  .dropdown-list ul {
+    padding: 5px;
+  }
+  .dropdown-list span {
+    font-size: 12px;
+  }
+}
+/* section syllabus */
+
+header {
+  background-color: #2ac1bc;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.search-container {
+  background-color: #2ac1bc;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.search-bar {
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;
+  gap: 10px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: white;
+  color: #2ac1bc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.sort-container {
+  margin: 20px;
+}
+
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+.course-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer; /* Menentukan bahwa kursus dapat diklik */
+}
+
+.course-card:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Efek hover */
+  transform: scale(1.02); /* Membuat efek zoom sedikit */
+}
+
+.course-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.course-card .content {
+  padding: 15px;
+}
+
+.course-card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.course-card p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.course-card .price {
+  color: #2ac1bc;
+  font-weight: bold;
+}
+
+.no-results {
+  text-align: center;
+  color: #555;
+  font-size: 16px;
+  margin-top: 20px;
+}
