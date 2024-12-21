@@ -10,15 +10,13 @@ html {
 body {
   margin: 0;
   padding: 0;
-
   font-family: "Poppins", sans-serif;
   z-index: 9999999999;
-  overflow: hidden; /* Mencegah scrollbar global muncul */
+  overflow-x: hidden; /* Mencegah scrollbar horizontal muncul */
 }
 .main {
   display: flex;
   position: relative;
-  overflow: hidden;
   width: 100vw; /* Lebar penuh viewport */
   height: 100vh;
 }
@@ -27,6 +25,7 @@ body {
   overflow: hidden;
   position: relative;
 }
+
 .right-page {
   flex: 7; /* 70% dari lebar halaman */
   overflow-y: auto;
@@ -34,6 +33,7 @@ body {
   padding: 20px;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
 }
+
 .video-background {
   position: absolute;
   top: 0;
@@ -48,7 +48,9 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
 .container-content {
+  overflow-y: auto;
   margin: auto;
   justify-content: flex-start;
   align-items: center;
@@ -57,6 +59,7 @@ body {
 }
 .container {
   display: flex;
+  overflow-y: auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -149,7 +152,6 @@ h1 {
   margin-bottom: 5px;
   display: block;
   color: #333;
-  margin-top: 20px;
 }
 
 .form-group input {
@@ -265,6 +267,8 @@ h1 {
   text-decoration: underline;
 }
 
+/* Media Queries */
+
 @media (max-width: 940px) {
   .main {
     display: flex;
@@ -279,12 +283,12 @@ h1 {
     width: 100%;
     margin: auto;
     padding: 20px;
-    margin: 10% 10% 10% 15%;
   }
   .container-content {
+    overflow-y: auto;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
   }
   .container {
     max-width: 500px;
@@ -292,95 +296,53 @@ h1 {
   }
 }
 
-/* Media Query for Tablet */
+/* Tablet */
 @media (max-width: 768px) {
   .main {
     flex-direction: column;
-    align-items: center;
   }
+
   .left-page {
     display: none;
   }
+
   .right-page {
     width: 100%;
     margin: auto;
     padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .form-group input {
-    width: 100%;
   }
 
   .container {
     max-width: 600px;
     padding: 20px;
   }
+
   h1 {
     font-size: 24px;
   }
-  .subtitle {
-    font-size: 14px;
-  }
+
   .btn-google {
     font-size: 14px;
     padding: 10px;
   }
-  .form-group {
+
+  .form-group input {
     width: 100%;
-  }
-  .password-container {
-    width: 100%;
-  }
-  .btn-submit {
-    width: 100%;
-    font-size: 14px;
-    padding: 10px;
   }
 }
 
-/* Media Query for max-width: 768px */
-@media (max-width: 768px) {
-  .main {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .right-page {
-    width: 100%;
-    margin: auto;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .btn-google {
-    width: 60%;
-  }
-  input#email {
-    width: 100%;
-  }
-
-  .container {
-    max-width: 500px;
-    padding: 20px;
-  }
-}
-
-/* Media Query for max-width: 480px */
+/* Smartphone (max-width: 480px) */
 @media (max-width: 480px) {
   .main {
-    flex-direction: column;
     align-items: center;
+  }
+  .left-page {
+    display: none;
   }
 
   .right-page {
-    width: 100%;
-    margin: auto;
     padding: 15px;
     display: flex;
-    align-items: center;
     justify-content: center;
   }
 
@@ -393,21 +355,11 @@ h1 {
     font-size: 20px;
   }
 
-  .subtitle {
-    font-size: 12px;
-  }
-
   .btn-google {
     font-size: 12px;
     padding: 8px;
   }
-  input#email {
-    width: 100%;
-  }
-  input#email::placeholder {
-    position: absolute;
-    overflow-wrap: break-word;
-  }
+
   .form-group input {
     font-size: 12px;
     padding: 8px;
@@ -425,15 +377,5 @@ h1 {
 
   .register-link {
     font-size: 12px;
-  }
-}
-@media (max-width: 768px) {
-  .main {
-    flex-direction: column; /* Mengubah tata letak menjadi vertikal untuk perangkat kecil */
-  }
-
-  .right-page {
-    flex: none; /* Menghapus lebar tetap */
-    width: 100%; /* Lebar penuh pada perangkat kecil */
   }
 }

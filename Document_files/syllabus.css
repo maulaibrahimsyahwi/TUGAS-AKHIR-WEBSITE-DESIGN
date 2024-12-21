@@ -455,7 +455,7 @@ body {
   font-size: 16px;
   font-weight: 500;
   display: flex;
-  margin: 20px 0 0 0;
+  margin: 20px;
   gap: 22rem;
 }
 .sorting {
@@ -595,7 +595,7 @@ select#sort-category {
   text-align: center;
   color: #555;
   font-size: 16px;
-  margin: 2rem 0 20rem 0;
+  margin-top: 20px;
 }
 
 /* Responsive Navbar */
@@ -695,159 +695,5 @@ select#sort-category {
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
-}
-/* General Footer Styling */
-.footer {
-  background-color: #f9f9f9;
-  color: #333;
-  padding: 2rem 1rem 1rem 1rem;
-  font-family: Arial, sans-serif;
-}
-
-/* Grid Container */
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 Kolom */
-  gap: 2rem;
-}
-
-/* Footer Info (Di awal grid) */
-.footer-info {
-  grid-column: span 3; /* Menempati 3 kolom */
-}
-.footer-info img {
-  margin-right: 20px;
-  width: 2rem;
-  height: 2rem;
-  transform: scale(2);
-}
-.footer-info p {
-  color: rgb(0, 0, 0, 0.6);
-  margin-bottom: 1rem;
-  font-size: 14px;
-}
-.footer-location {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 10px;
-}
-.footer-skill {
-  font-weight: 800;
-  font-size: 2.4rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-}
-.footer-span {
-  font-weight: 800;
-  font-size: 2.4rem;
-  color: #51b84b;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-}
-
-.footer-logo span {
-  font-weight: 800;
-  font-size: 2.4rem;
-  color: #d93b4a;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-}
-.footer-name {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-}
-.footer-info p a {
-  color: rgb(0, 0, 0, 0.6);
-  text-decoration: none;
-}
-.footer-icon {
-  display: inline-block;
-}
-.footer-icon img {
-  width: 12px;
-  height: 12px;
-  opacity: 0.7;
-}
-.footer-logo {
-  display: inline-block;
-  margin: 0 24px 0 10px;
-  width: 24px;
-}
-.footer-logo img {
-  width: 100%;
-  height: 100%;
-}
-.footer-address {
-  margin: 0 0 12rem 38px;
-  text-decoration: none;
-  font-size: 14px;
-  color: rgb(0, 0, 0, 0.6);
-}
-.footer-address:hover {
-  color: #d93b4a;
-  font-weight: 600;
-}
-/* Footer Links (Skilvul, Layanan, Bantuan) */
-.footer-links {
-  grid-column: span 1; /* Menempati 1 kolom */
-}
-.footer-links h4 {
-  font-weight: 900;
-  margin-bottom: 1rem;
-  font-size: 18px;
-}
-.footer-links ul {
-  padding: 0;
-}
-.footer-links ul li {
-  margin: 2px;
-  list-style: none;
-  color: #000;
-}
-.footer-links ul li a:hover {
-  color: #d93b4a;
-  font-weight: 600;
-}
-.footer-links ul li a {
-  text-decoration: none;
-  color: rgb(0, 0, 0, 0.6);
-}
-
-/* Footer Bottom */
-.footer-bottom {
-  margin-top: 2rem;
-  border-top: 1px solid #ddd;
-  padding-top: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Social Icons */
-.social-icons {
-  display: flex;
-  gap: 1rem;
-}
-
-.social-icons img {
-  width: 32px;
-  height: 32px;
-}
-.social-icons img:hover {
-  transform: scale(1.5);
-  color: #d93b4a;
-  fill: #d93b4a;
-}
-
-/* Responsiveness untuk layar kecil */
-@media (max-width: 768px) {
-  .footer-container {
-    grid-template-columns: 1fr; /* Tata letak vertikal */
-  }
-
-  .footer-info,
-  .footer-links {
-    grid-column: span 1; /* Semua elemen memakan 1 baris */
   }
 }

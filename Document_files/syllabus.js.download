@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-// bagian main
 
 document
   .getElementById("search-input")
@@ -65,18 +64,11 @@ document
   });
 // Menambahkan event listener pada setiap kursus card
 const courseCards = document.querySelectorAll(".course-card");
-const courses = document.querySelectorAll(".course-card");
-const coursesContainer = document.getElementById("courses");
-let found = false;
 
 courseCards.forEach((card) => {
   card.addEventListener("click", () => {
     // Anda dapat mengganti dengan fungsi yang ingin dilakukan saat kursus card diklik
-    alert(
-      "Kursus " +
-        card.querySelector(".col-content").textContent +
-        " telah diklik!"
-    );
+    alert("Kursus " + card.querySelector("h3").textContent + " telah diklik!");
   });
 });
 
@@ -84,6 +76,7 @@ function sortCourses() {
   const levelSort = document.getElementById("sort-level").value;
   const categorySort = document.getElementById("sort-category").value;
   const priceSort = document.getElementById("sort-price").value;
+
   const coursesContainer = document.getElementById("courses");
   const courses = Array.from(coursesContainer.children);
 
@@ -127,10 +120,12 @@ function searchCourses() {
     return;
   }
 
+  const courses = document.querySelectorAll(".course-card");
+  const coursesContainer = document.getElementById("courses");
+  let found = false;
+
   courses.forEach((course) => {
-    const title = course
-      .querySelector(".col-content")
-      .textContent.toLowerCase();
+    const title = course.querySelector("h3").textContent.toLowerCase();
     const level = course
       .querySelector("p:nth-of-type(1)")
       .textContent.toLowerCase();

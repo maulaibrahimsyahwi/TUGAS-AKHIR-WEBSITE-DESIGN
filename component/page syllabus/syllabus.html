@@ -12,13 +12,13 @@
     <nav class="navbar">
       <div class="logo">
         <a href="#" class="navbar-logo">
-          <img src="img/icon.svg" alt="" />
+          <img src="img/icon/logo.png" alt="" />
         </a>
       </div>
       <div class="navbar-nav">
         <ul>
           <li name="home">
-            <a href="#"> Home </a>
+            <a href="/Main Page/index.html"> Home </a>
           </li>
           <!-- Program & Fasilitas -->
           <li name="program dan Fasilitas" class="dropdown-parent">
@@ -105,13 +105,13 @@
             <ul class="dropdown">
               <li>
                 <a href="#">
-                  <img src="img/icon/rating mentor.png" alt="" />
+                  <img src="img/icon/mentor.png" alt="" />
                   <span>Rating Mentor</span>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img src="img/icon/student rating.png" alt="" />
+                  <img src="img/icon/student.png" alt="" />
                   <span>Rating Alumni</span>
                 </a>
               </li>
@@ -138,13 +138,13 @@
             <ul class="dropdown">
               <li>
                 <a href="#">
-                  <img src="img/icon/tentang website.png" alt="" />
+                  <img src="img/icon/about.png" alt="" />
                   <span>Tentang Website</span>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img src="img/icon/loker.png" alt="" />
+                  <img src="img/icon/lowongan.png" alt="" />
                   <span>Lowongan Kerja</span>
                 </a>
               </li>
@@ -154,10 +154,12 @@
       </div>
       <div class="navbar-extra">
         <div class="navbar-login">
-          <a href="../Registration Page/registration.html" class="register-link"
+          <a
+            href="../Registration Page/registrationpage.html"
+            class="register-link"
             >Daftar</a
           >
-          <a href="../Login Page/login.html" class="login">Login</a>
+          <a href="../login page/loginpage.html" class="login">Login</a>
         </div>
         <div id="hamburger-menu"><i data-feather="menu"></i></div>
       </div>
@@ -168,7 +170,7 @@
           <section class="searching-container">
             <div class="heading">
               <h1>Cari Kelas yang Kamu Pelajari</h1>
-              <p>Lebih dari 250+ kelas yang dapat kamu pelajari di sini</p>
+              <p>Lebih dari 900+ kelas yang dapat kamu pelajari di sini</p>
             </div>
             <div class="search-container">
               <div class="search-bar">
@@ -182,282 +184,808 @@
             </div>
           </section>
           <section class="sort-container">
-            <div class="sort-level">
-              <label for="sort-level">Level:</label>
-              <select id="sort-level" onchange="sortCourses()">
-                <option value="beginner">Beginner</option>
-                <option value="intermediate">Intermediate</option>
-                <option value="advanced">Advanced</option>
-              </select>
+            <div class="sorting">
+              <div class="sort-level">
+                <label for="sort-level"> Level </label>
+                <select id="sort-level" onchange="sortCourses()">
+                  <option value="all">Semua Kategori</option>
+                  <option value="beginner">Beginner</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="advanced">Advanced</option>
+                </select>
+              </div>
+              <div class="sort-price">
+                <label for="sort-price">Harga</label>
+                <select id="sort-price" onchange="sortCourses()">
+                  <option value="all">Semua Kategori</option>
+                  <option value="highest">Harga Tertinggi</option>
+                  <option value="lowest">Harga Terendah</option>
+                </select>
+              </div>
             </div>
             <div class="sort-class">
-              <label for="sort-category">Kategori:</label>
+              <label for="sort-category">Kategori</label>
               <select id="sort-category" onchange="sortCourses()">
+                <option value="all">Semua Kategori</option>
                 <option value="popular">Kelas Populer</option>
                 <option value="newest">Kelas Terbaru</option>
                 <option value="oldest">Kelas Terlama</option>
               </select>
             </div>
-            <div class="sort-price">
-              <label for="sort-price">Harga:</label>
-              <select id="sort-price" onchange="sortCourses()">
-                <option value="highest">Harga Tertinggi</option>
-                <option value="lowest">Harga Terendah</option>
-              </select>
-            </div>
           </section>
           <section class="courses-container">
             <div class="courses" id="courses">
+              <!-- Data Struktur -->
+              <div
+                class="course-card"
+                data-popular="2"
+                data-price="159000"
+                data-level="advanced"
+                data-duration="120"
+              >
+                <img
+                  src="img/courses/syllabus-datastructure.png"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <div class="col-content">
+                    <h5>Building Efficient Problem-Solving Skills</h5>
+                  </div>
+                  <div class="col-content-info">
+                    <div class="col-mid-info">
+                      <div class="left-col-info">
+                        <p>Level: advanced</p>
+                        <p>Durasi: 2 Jam</p>
+                      </div>
+                      <div class="right-col-info">
+                        <span>Siswa : 200</span>
+                      </div>
+                    </div>
+                    <div class="col-bot-info">
+                      <div class="rating-left">
+                        <span>
+                          <strong>
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              data-prefix="fas"
+                              data-icon="star-half-stroke"
+                              class="svg-inline--fa fa-star-half-stroke me-1"
+                              role="img"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 576 512"
+                            >
+                              <path
+                                fill="currentColor"
+                                d="M288 376.4l.1-.1 26.4 14.1 85.2 45.5-16.5-97.6-4.8-28.7 20.7-20.5 70.1-69.3-96.1-14.2-29.3-4.3-12.9-26.6L288.1 86.9l-.1 .3 0 289.2zm175.1 98.3c2 12-3 24.2-12.9 31.3s-23 8-33.8 2.3L288.1 439.8 159.8 508.3C149 514 135.9 513.1 126 506s-14.9-19.3-12.9-31.3L137.8 329 33.6 225.9c-8.6-8.5-11.7-21.2-7.9-32.7s13.7-19.9 25.7-21.7L195 150.3 259.4 18c5.4-11 16.5-18 28.8-18s23.4 7 28.8 18l64.3 132.3 143.6 21.2c12 1.8 22 10.2 25.7 21.7s.7 24.2-7.9 32.7L438.5 329l24.6 145.7z"
+                              ></path>
+                            </svg>
+                            <span>4.8</span>
+                          </strong>
+                        </span>
+                      </div>
+                      <div class="rating-right">
+                        <span class="rating-right">
+                          <span>
+                            <small>(90) Penilaian</small>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="col-price">
+                      <p class="price">Rp 159.000</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Building Efficient Problem-Solving Skills -->
+              <div
+                class="course-card"
+                data-popular="2"
+                data-price="399000"
+                data-level="intermediate"
+                data-duration="120"
+              >
+                <img
+                  src="img/courses/syllabus-economics.png"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <div class="col-content">
+                    <h5>Mentoring Ekonomi untuk Pengambil Keputusan</h5>
+                  </div>
+                  <div class="col-content-info">
+                    <div class="col-mid-info">
+                      <div class="left-col-info">
+                        <p>Level: intermediate</p>
+                        <p>Durasi: 2 Jam</p>
+                      </div>
+                      <div class="right-col-info">
+                        <span>Siswa : 100</span>
+                      </div>
+                    </div>
+                    <div class="col-bot-info">
+                      <div class="rating-left">
+                        <span>
+                          <strong>
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              data-prefix="fas"
+                              data-icon="star-half-stroke"
+                              class="svg-inline--fa fa-star-half-stroke me-1"
+                              role="img"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 576 512"
+                            >
+                              <path
+                                fill="currentColor"
+                                d="M288 376.4l.1-.1 26.4 14.1 85.2 45.5-16.5-97.6-4.8-28.7 20.7-20.5 70.1-69.3-96.1-14.2-29.3-4.3-12.9-26.6L288.1 86.9l-.1 .3 0 289.2zm175.1 98.3c2 12-3 24.2-12.9 31.3s-23 8-33.8 2.3L288.1 439.8 159.8 508.3C149 514 135.9 513.1 126 506s-14.9-19.3-12.9-31.3L137.8 329 33.6 225.9c-8.6-8.5-11.7-21.2-7.9-32.7s13.7-19.9 25.7-21.7L195 150.3 259.4 18c5.4-11 16.5-18 28.8-18s23.4 7 28.8 18l64.3 132.3 143.6 21.2c12 1.8 22 10.2 25.7 21.7s.7 24.2-7.9 32.7L438.5 329l24.6 145.7z"
+                              ></path>
+                            </svg>
+                            <span>4.8</span>
+                          </strong>
+                        </span>
+                      </div>
+                      <div class="rating-right">
+                        <span class="rating-right">
+                          <span>
+                            <small>(900) Penilaian</small>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="col-price">
+                      <p class="price">Rp 399.000</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- basic electronic -->
+              <div
+                class="course-card"
+                data-popular="3"
+                data-price="99000"
+                data-level="beginner"
+                data-duration="90"
+              >
+                <img
+                  src="img/courses/syllabus-electronics.png"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <div class="col-content">
+                    <h5>Understanding Components, Circuits, and Systems</h5>
+                  </div>
+                  <div class="col-content-info">
+                    <div class="col-mid-info">
+                      <div class="left-col-info">
+                        <p>Level: beginner</p>
+                        <p>Durasi: 1 Jam 30 Menit</p>
+                      </div>
+                      <div class="right-col-info">
+                        <span>Siswa : 500</span>
+                      </div>
+                    </div>
+                    <div class="col-bot-info">
+                      <div class="rating-left">
+                        <span>
+                          <strong>
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              data-prefix="fas"
+                              data-icon="star-half-stroke"
+                              class="svg-inline--fa fa-star-half-stroke me-1"
+                              role="img"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 576 512"
+                            >
+                              <path
+                                fill="currentColor"
+                                d="M288 376.4l.1-.1 26.4 14.1 85.2 45.5-16.5-97.6-4.8-28.7 20.7-20.5 70.1-69.3-96.1-14.2-29.3-4.3-12.9-26.6L288.1 86.9l-.1 .3 0 289.2zm175.1 98.3c2 12-3 24.2-12.9 31.3s-23 8-33.8 2.3L288.1 439.8 159.8 508.3C149 514 135.9 513.1 126 506s-14.9-19.3-12.9-31.3L137.8 329 33.6 225.9c-8.6-8.5-11.7-21.2-7.9-32.7s13.7-19.9 25.7-21.7L195 150.3 259.4 18c5.4-11 16.5-18 28.8-18s23.4 7 28.8 18l64.3 132.3 143.6 21.2c12 1.8 22 10.2 25.7 21.7s.7 24.2-7.9 32.7L438.5 329l24.6 145.7z"
+                              ></path>
+                            </svg>
+                            <span>4.8</span>
+                          </strong>
+                        </span>
+                      </div>
+                      <div class="rating-right">
+                        <span class="rating-right">
+                          <span>
+                            <small>(998) Penilaian</small>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="col-price">
+                      <p class="price">Rp 99.000</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Advance English -->
+              <div
+                class="course-card"
+                data-popular="3"
+                data-price="159000"
+                data-level="beginner"
+                data-duration="180"
+              >
+                <img
+                  src="img/courses/syllabus-english.png"
+                  alt="Course Image"
+                />
+                <div class="content">
+                  <div class="col-content">
+                    <h5>
+                      Mastering Advanced English: Skills for Global
+                      Communication
+                    </h5>
+                  </div>
+                  <div class="col-content-info">
+                    <div class="col-mid-info">
+                      <div class="left-col-info">
+                        <p>Level: beginner</p>
+                        <p>Durasi: 3 Jam</p>
+                      </div>
+                      <div class="right-col-info">
+                        <span>Siswa : 500</span>
+                      </div>
+                    </div>
+                    <div class="col-bot-info">
+                      <div class="rating-left">
+                        <span>
+                          <strong>
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              data-prefix="fas"
+                              data-icon="star-half-stroke"
+                              class="svg-inline--fa fa-star-half-stroke me-1"
+                              role="img"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 576 512"
+                            >
+                              <path
+                                fill="currentColor"
+                                d="M288 376.4l.1-.1 26.4 14.1 85.2 45.5-16.5-97.6-4.8-28.7 20.7-20.5 70.1-69.3-96.1-14.2-29.3-4.3-12.9-26.6L288.1 86.9l-.1 .3 0 289.2zm175.1 98.3c2 12-3 24.2-12.9 31.3s-23 8-33.8 2.3L288.1 439.8 159.8 508.3C149 514 135.9 513.1 126 506s-14.9-19.3-12.9-31.3L137.8 329 33.6 225.9c-8.6-8.5-11.7-21.2-7.9-32.7s13.7-19.9 25.7-21.7L195 150.3 259.4 18c5.4-11 16.5-18 28.8-18s23.4 7 28.8 18l64.3 132.3 143.6 21.2c12 1.8 22 10.2 25.7 21.7s.7 24.2-7.9 32.7L438.5 329l24.6 145.7z"
+                              ></path>
+                            </svg>
+                            <span>4.8</span>
+                          </strong>
+                        </span>
+                      </div>
+                      <div class="rating-right">
+                        <span class="rating-right">
+                          <span>
+                            <small>(765) Penilaian</small>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="col-price">
+                      <p class="price">Rp 159.000</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Mastering Goal Achievement: Strategies, Mindset, and Action Plan -->
               <div
                 class="course-card"
                 data-popular="1"
                 data-price="159000"
                 data-level="beginner"
-                data-duration="120"
+                data-duration="240"
               >
-                <img
-                  src="https://via.placeholder.com/300x150"
-                  alt="Course Image"
-                />
+                <img src="img/courses//syllabus-goal.png" alt="Course Image" />
                 <div class="content">
-                  <h3>Membuat Website Crowdfunding</h3>
-                  <p>Level: Beginner</p>
-                  <p>Durasi: 2 Jam</p>
-                  <p class="price">Rp 159.000</p>
+                  <div class="col-content">
+                    <h5>
+                      Mastering Goal Achievement: Strategies, Mindset, and
+                      Action Plan
+                    </h5>
+                  </div>
+                  <div class="col-content-info">
+                    <div class="col-mid-info">
+                      <div class="left-col-info">
+                        <p>Level: beginner</p>
+                        <p>Durasi: 4 Jam</p>
+                      </div>
+                      <div class="right-col-info">
+                        <span>Siswa : 30</span>
+                      </div>
+                    </div>
+                    <div class="col-bot-info">
+                      <div class="rating-left">
+                        <span>
+                          <strong>
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              data-prefix="fas"
+                              data-icon="star-half-stroke"
+                              class="svg-inline--fa fa-star-half-stroke me-1"
+                              role="img"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 576 512"
+                            >
+                              <path
+                                fill="currentColor"
+                                d="M288 376.4l.1-.1 26.4 14.1 85.2 45.5-16.5-97.6-4.8-28.7 20.7-20.5 70.1-69.3-96.1-14.2-29.3-4.3-12.9-26.6L288.1 86.9l-.1 .3 0 289.2zm175.1 98.3c2 12-3 24.2-12.9 31.3s-23 8-33.8 2.3L288.1 439.8 159.8 508.3C149 514 135.9 513.1 126 506s-14.9-19.3-12.9-31.3L137.8 329 33.6 225.9c-8.6-8.5-11.7-21.2-7.9-32.7s13.7-19.9 25.7-21.7L195 150.3 259.4 18c5.4-11 16.5-18 28.8-18s23.4 7 28.8 18l64.3 132.3 143.6 21.2c12 1.8 22 10.2 25.7 21.7s.7 24.2-7.9 32.7L438.5 329l24.6 145.7z"
+                              ></path>
+                            </svg>
+                            <span>4.8</span>
+                          </strong>
+                        </span>
+                      </div>
+                      <div class="rating-right">
+                        <span class="rating-right">
+                          <span>
+                            <small>(902) Penilaian</small>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="col-price">
+                      <p class="price">Rp 159.000</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <!-- Building a Powerful Personal Brand  -->
               <div
                 class="course-card"
-                data-popular="3"
-                data-price="299000"
-                data-level="beginner"
-                data-duration="60"
-              >
-                <img
-                  src="https://via.placeholder.com/300x150"
-                  alt="Course Image"
-                />
-                <div class="content">
-                  <h3>Membuat Website E-Wallet</h3>
-                  <p>Level: Beginner</p>
-                  <p>Durasi: 1 Jam</p>
-                  <p class="price">Rp 299.000</p>
-                </div>
-              </div>
-              <div
-                class="course-card"
-                data-popular="2"
-                data-price="249000"
+                data-popular="1"
+                data-price="699000"
                 data-level="intermediate"
                 data-duration="180"
               >
                 <img
-                  src="https://via.placeholder.com/300x150"
+                  src="img/courses/syllabus-personal.png"
                   alt="Course Image"
                 />
                 <div class="content">
-                  <h3>Pengembangan Web Fullstack</h3>
-                  <p>Level: Intermediate</p>
-                  <p>Durasi: 3 Jam</p>
-                  <p class="price">Rp 249.000</p>
+                  <div class="col-content">
+                    <h5>Building a Powerful Personal Brand</h5>
+                  </div>
+                  <div class="col-content-info">
+                    <div class="col-mid-info">
+                      <div class="left-col-info">
+                        <p>Level: advanced</p>
+                        <p>Durasi: 3 Jam</p>
+                      </div>
+                      <div class="right-col-info">
+                        <span>Siswa : 40</span>
+                      </div>
+                    </div>
+                    <div class="col-bot-info">
+                      <div class="rating-left">
+                        <span>
+                          <strong>
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              data-prefix="fas"
+                              data-icon="star-half-stroke"
+                              class="svg-inline--fa fa-star-half-stroke me-1"
+                              role="img"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 576 512"
+                            >
+                              <path
+                                fill="currentColor"
+                                d="M288 376.4l.1-.1 26.4 14.1 85.2 45.5-16.5-97.6-4.8-28.7 20.7-20.5 70.1-69.3-96.1-14.2-29.3-4.3-12.9-26.6L288.1 86.9l-.1 .3 0 289.2zm175.1 98.3c2 12-3 24.2-12.9 31.3s-23 8-33.8 2.3L288.1 439.8 159.8 508.3C149 514 135.9 513.1 126 506s-14.9-19.3-12.9-31.3L137.8 329 33.6 225.9c-8.6-8.5-11.7-21.2-7.9-32.7s13.7-19.9 25.7-21.7L195 150.3 259.4 18c5.4-11 16.5-18 28.8-18s23.4 7 28.8 18l64.3 132.3 143.6 21.2c12 1.8 22 10.2 25.7 21.7s.7 24.2-7.9 32.7L438.5 329l24.6 145.7z"
+                              ></path>
+                            </svg>
+                            <span>4.5</span>
+                          </strong>
+                        </span>
+                      </div>
+                      <div class="rating-right">
+                        <span class="rating-right">
+                          <span>
+                            <small>(921) Penilaian</small>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="col-price">
+                      <p class="price">Rp 699.000</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <!-- philosophy of science -->
               <div
                 class="course-card"
-                data-popular="4"
+                data-popular="1"
                 data-price="199000"
                 data-level="beginner"
-                data-duration="120"
-              >
-                <img
-                  src="https://via.placeholder.com/300x150"
-                  alt="Course Image"
-                />
-                <div class="content">
-                  <h3>Belajar Dasar JavaScript</h3>
-                  <p>Level: Beginner</p>
-                  <p>Durasi: 2 Jam</p>
-                  <p class="price">Rp 199.000</p>
-                </div>
-              </div>
-              <div
-                class="course-card"
-                data-popular="5"
-                data-price="349000"
-                data-level="advanced"
                 data-duration="240"
               >
                 <img
-                  src="https://via.placeholder.com/300x150"
+                  src="img/courses/syllabus-philosophy.png"
                   alt="Course Image"
                 />
                 <div class="content">
-                  <h3>Advanced React Techniques</h3>
-                  <p>Level: Advanced</p>
-                  <p>Durasi: 4 Jam</p>
-                  <p class="price">Rp 349.000</p>
+                  <div class="col-content">
+                    <h5>
+                      A Comprehensive Syllabus on the Philosophy of Science
+                    </h5>
+                  </div>
+                  <div class="col-content-info">
+                    <div class="col-mid-info">
+                      <div class="left-col-info">
+                        <p>Level: advanced</p>
+                        <p>Durasi: 4 Jam</p>
+                      </div>
+                      <div class="right-col-info">
+                        <span>Siswa : 40</span>
+                      </div>
+                    </div>
+                    <div class="col-bot-info">
+                      <div class="rating-left">
+                        <span>
+                          <strong>
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              data-prefix="fas"
+                              data-icon="star-half-stroke"
+                              class="svg-inline--fa fa-star-half-stroke me-1"
+                              role="img"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 576 512"
+                            >
+                              <path
+                                fill="currentColor"
+                                d="M288 376.4l.1-.1 26.4 14.1 85.2 45.5-16.5-97.6-4.8-28.7 20.7-20.5 70.1-69.3-96.1-14.2-29.3-4.3-12.9-26.6L288.1 86.9l-.1 .3 0 289.2zm175.1 98.3c2 12-3 24.2-12.9 31.3s-23 8-33.8 2.3L288.1 439.8 159.8 508.3C149 514 135.9 513.1 126 506s-14.9-19.3-12.9-31.3L137.8 329 33.6 225.9c-8.6-8.5-11.7-21.2-7.9-32.7s13.7-19.9 25.7-21.7L195 150.3 259.4 18c5.4-11 16.5-18 28.8-18s23.4 7 28.8 18l64.3 132.3 143.6 21.2c12 1.8 22 10.2 25.7 21.7s.7 24.2-7.9 32.7L438.5 329l24.6 145.7z"
+                              ></path>
+                            </svg>
+                            <span>4.5</span>
+                          </strong>
+                        </span>
+                      </div>
+                      <div class="rating-right">
+                        <span class="rating-right">
+                          <span>
+                            <small>(309) Penilaian</small>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="col-price">
+                      <p class="price">Rp 199.000</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <!-- programming basic -->
               <div
                 class="course-card"
-                data-popular="5"
-                data-price="349000"
+                data-popular="1"
+                data-price="599000"
                 data-level="advanced"
-                data-duration="240"
+                data-duration="360"
               >
                 <img
-                  src="https://via.placeholder.com/300x150"
+                  src="img/courses/syllabus-programming.png"
                   alt="Course Image"
                 />
                 <div class="content">
-                  <h3>Advanced React Techniques</h3>
-                  <p>Level: Advanced</p>
-                  <p>Durasi: 4 Jam</p>
-                  <p class="price">Rp 349.000</p>
+                  <div class="col-content">
+                    <h5>A Comprehensive Introduction to Coding</h5>
+                  </div>
+                  <div class="col-content-info">
+                    <div class="col-mid-info">
+                      <div class="left-col-info">
+                        <p>Level: advanced</p>
+                        <p>Durasi: 6 Jam</p>
+                      </div>
+                      <div class="right-col-info">
+                        <span>Siswa : 100</span>
+                      </div>
+                    </div>
+                    <div class="col-bot-info">
+                      <div class="rating-left">
+                        <span>
+                          <strong>
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              data-prefix="fas"
+                              data-icon="star-half-stroke"
+                              class="svg-inline--fa fa-star-half-stroke me-1"
+                              role="img"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 576 512"
+                            >
+                              <path
+                                fill="currentColor"
+                                d="M288 376.4l.1-.1 26.4 14.1 85.2 45.5-16.5-97.6-4.8-28.7 20.7-20.5 70.1-69.3-96.1-14.2-29.3-4.3-12.9-26.6L288.1 86.9l-.1 .3 0 289.2zm175.1 98.3c2 12-3 24.2-12.9 31.3s-23 8-33.8 2.3L288.1 439.8 159.8 508.3C149 514 135.9 513.1 126 506s-14.9-19.3-12.9-31.3L137.8 329 33.6 225.9c-8.6-8.5-11.7-21.2-7.9-32.7s13.7-19.9 25.7-21.7L195 150.3 259.4 18c5.4-11 16.5-18 28.8-18s23.4 7 28.8 18l64.3 132.3 143.6 21.2c12 1.8 22 10.2 25.7 21.7s.7 24.2-7.9 32.7L438.5 329l24.6 145.7z"
+                              ></path>
+                            </svg>
+                            <span>4.9</span>
+                          </strong>
+                        </span>
+                      </div>
+                      <div class="rating-right">
+                        <span class="rating-right">
+                          <span>
+                            <small>(98) Penilaian</small>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="col-price">
+                      <p class="price">Rp 599.000</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div
-                class="course-card"
-                data-popular="5"
-                data-price="349000"
-                data-level="advanced"
-                data-duration="240"
-              >
-                <img
-                  src="https://via.placeholder.com/300x150"
-                  alt="Course Image"
-                />
-                <div class="content">
-                  <h3>Advanced React Techniques</h3>
-                  <p>Level: Advanced</p>
-                  <p>Durasi: 4 Jam</p>
-                  <p class="price">Rp 349.000</p>
-                </div>
-              </div>
+              <!--  -->
               <div
                 class="course-card"
                 data-popular="1"
                 data-price="159000"
-                data-level="beginner"
+                data-level="advanced"
                 data-duration="120"
               >
                 <img
-                  src="https://via.placeholder.com/300x150"
+                  src="img/courses/syllabus-datastructure.png"
                   alt="Course Image"
                 />
                 <div class="content">
-                  <h3>Membuat Website Crowdfunding</h3>
-                  <p>Level: Beginner</p>
-                  <p>Durasi: 2 Jam</p>
-                  <p class="price">Rp 159.000</p>
+                  <div class="col-content">
+                    <h5>Membuat Website Crowdfunding</h5>
+                  </div>
+                  <div class="col-content-info">
+                    <div class="col-mid-info">
+                      <div class="left-col-info">
+                        <p>Level: advanced</p>
+                        <p>Durasi: 2 Jam</p>
+                      </div>
+                      <div class="right-col-info">
+                        <span>Siswa : 100</span>
+                      </div>
+                    </div>
+                    <div class="col-bot-info">
+                      <div class="rating-left">
+                        <span>
+                          <strong>
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              data-prefix="fas"
+                              data-icon="star-half-stroke"
+                              class="svg-inline--fa fa-star-half-stroke me-1"
+                              role="img"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 576 512"
+                            >
+                              <path
+                                fill="currentColor"
+                                d="M288 376.4l.1-.1 26.4 14.1 85.2 45.5-16.5-97.6-4.8-28.7 20.7-20.5 70.1-69.3-96.1-14.2-29.3-4.3-12.9-26.6L288.1 86.9l-.1 .3 0 289.2zm175.1 98.3c2 12-3 24.2-12.9 31.3s-23 8-33.8 2.3L288.1 439.8 159.8 508.3C149 514 135.9 513.1 126 506s-14.9-19.3-12.9-31.3L137.8 329 33.6 225.9c-8.6-8.5-11.7-21.2-7.9-32.7s13.7-19.9 25.7-21.7L195 150.3 259.4 18c5.4-11 16.5-18 28.8-18s23.4 7 28.8 18l64.3 132.3 143.6 21.2c12 1.8 22 10.2 25.7 21.7s.7 24.2-7.9 32.7L438.5 329l24.6 145.7z"
+                              ></path>
+                            </svg>
+                            <span>4.8</span>
+                          </strong>
+                        </span>
+                      </div>
+                      <div class="rating-right">
+                        <span class="rating-right">
+                          <span>
+                            <small>(123) Penilaian</small>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="col-price">
+                      <p class="price">Rp 159.000</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <!-- Public Speaking -->
               <div
                 class="course-card"
-                data-popular="3"
-                data-price="299000"
-                data-level="beginner"
-                data-duration="60"
+                data-popular="1"
+                data-price="799000"
+                data-level="advanced"
+                data-duration="150"
               >
                 <img
-                  src="https://via.placeholder.com/300x150"
+                  src="img/courses/syllabus-speaking.png"
                   alt="Course Image"
                 />
                 <div class="content">
-                  <h3>Membuat Website E-Wallet</h3>
-                  <p>Level: Beginner</p>
-                  <p>Durasi: 1 Jam</p>
-                  <p class="price">Rp 299.000</p>
+                  <div class="col-content">
+                    <h5>A Step-by-Step Syllabus for Confident Communication</h5>
+                  </div>
+                  <div class="col-content-info">
+                    <div class="col-mid-info">
+                      <div class="left-col-info">
+                        <p>Level: advanced</p>
+                        <p>Durasi: 2 Jam 30 Menit</p>
+                      </div>
+                      <div class="right-col-info">
+                        <span>Siswa : 1700</span>
+                      </div>
+                    </div>
+                    <div class="col-bot-info">
+                      <div class="rating-left">
+                        <span>
+                          <strong>
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              data-prefix="fas"
+                              data-icon="star-half-stroke"
+                              class="svg-inline--fa fa-star-half-stroke me-1"
+                              role="img"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 576 512"
+                            >
+                              <path
+                                fill="currentColor"
+                                d="M288 376.4l.1-.1 26.4 14.1 85.2 45.5-16.5-97.6-4.8-28.7 20.7-20.5 70.1-69.3-96.1-14.2-29.3-4.3-12.9-26.6L288.1 86.9l-.1 .3 0 289.2zm175.1 98.3c2 12-3 24.2-12.9 31.3s-23 8-33.8 2.3L288.1 439.8 159.8 508.3C149 514 135.9 513.1 126 506s-14.9-19.3-12.9-31.3L137.8 329 33.6 225.9c-8.6-8.5-11.7-21.2-7.9-32.7s13.7-19.9 25.7-21.7L195 150.3 259.4 18c5.4-11 16.5-18 28.8-18s23.4 7 28.8 18l64.3 132.3 143.6 21.2c12 1.8 22 10.2 25.7 21.7s.7 24.2-7.9 32.7L438.5 329l24.6 145.7z"
+                              ></path>
+                            </svg>
+                            <span>4.7</span>
+                          </strong>
+                        </span>
+                      </div>
+                      <div class="rating-right">
+                        <span class="rating-right">
+                          <span>
+                            <small>(33) Penilaian</small>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="col-price">
+                      <p class="price">Rp 799.000</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <!-- How To a create website -->
               <div
                 class="course-card"
-                data-popular="2"
-                data-price="249000"
+                data-popular="1"
+                data-price="999000"
                 data-level="intermediate"
-                data-duration="180"
-              >
-                <img
-                  src="https://via.placeholder.com/300x150"
-                  alt="Course Image"
-                />
-                <div class="content">
-                  <h3>Pengembangan Web Fullstack</h3>
-                  <p>Level: Intermediate</p>
-                  <p>Durasi: 3 Jam</p>
-                  <p class="price">Rp 249.000</p>
-                </div>
-              </div>
-              <div
-                class="course-card"
-                data-popular="4"
-                data-price="199000"
-                data-level="beginner"
                 data-duration="120"
               >
                 <img
-                  src="https://via.placeholder.com/300x150"
+                  src="img/courses/syllabus-website.png"
                   alt="Course Image"
                 />
                 <div class="content">
-                  <h3>Belajar Dasar JavaScript</h3>
-                  <p>Level: Beginner</p>
-                  <p>Durasi: 2 Jam</p>
-                  <p class="price">Rp 199.000</p>
+                  <div class="col-content">
+                    <h5>The Complete Guide to Building Websites</h5>
+                  </div>
+                  <div class="col-content-info">
+                    <div class="col-mid-info">
+                      <div class="left-col-info">
+                        <p>Level: intermediate</p>
+                        <p>Durasi: 2 Jam</p>
+                      </div>
+                      <div class="right-col-info">
+                        <span>Siswa : 10000</span>
+                      </div>
+                    </div>
+                    <div class="col-bot-info">
+                      <div class="rating-left">
+                        <span>
+                          <strong>
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              data-prefix="fas"
+                              data-icon="star-half-stroke"
+                              class="svg-inline--fa fa-star-half-stroke me-1"
+                              role="img"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 576 512"
+                            >
+                              <path
+                                fill="currentColor"
+                                d="M288 376.4l.1-.1 26.4 14.1 85.2 45.5-16.5-97.6-4.8-28.7 20.7-20.5 70.1-69.3-96.1-14.2-29.3-4.3-12.9-26.6L288.1 86.9l-.1 .3 0 289.2zm175.1 98.3c2 12-3 24.2-12.9 31.3s-23 8-33.8 2.3L288.1 439.8 159.8 508.3C149 514 135.9 513.1 126 506s-14.9-19.3-12.9-31.3L137.8 329 33.6 225.9c-8.6-8.5-11.7-21.2-7.9-32.7s13.7-19.9 25.7-21.7L195 150.3 259.4 18c5.4-11 16.5-18 28.8-18s23.4 7 28.8 18l64.3 132.3 143.6 21.2c12 1.8 22 10.2 25.7 21.7s.7 24.2-7.9 32.7L438.5 329l24.6 145.7z"
+                              ></path>
+                            </svg>
+                            <span>4.8</span>
+                          </strong>
+                        </span>
+                      </div>
+                      <div class="rating-right">
+                        <span class="rating-right">
+                          <span>
+                            <small>(676) Penilaian</small>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="col-price">
+                      <p class="price">Rp 999.000</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <!--  -->
               <div
                 class="course-card"
-                data-popular="5"
-                data-price="349000"
+                data-popular="1"
+                data-price="159000"
                 data-level="advanced"
-                data-duration="240"
+                data-duration="120"
               >
                 <img
-                  src="https://via.placeholder.com/300x150"
+                  src="img/courses/syllabus-datastructure.png"
                   alt="Course Image"
                 />
                 <div class="content">
-                  <h3>Advanced React Techniques</h3>
-                  <p>Level: Advanced</p>
-                  <p>Durasi: 4 Jam</p>
-                  <p class="price">Rp 349.000</p>
-                </div>
-              </div>
-              <div
-                class="course-card"
-                data-popular="5"
-                data-price="349000"
-                data-level="advanced"
-                data-duration="240"
-              >
-                <img
-                  src="https://via.placeholder.com/300x150"
-                  alt="Course Image"
-                />
-                <div class="content">
-                  <h3>Advanced React Techniques</h3>
-                  <p>Level: Advanced</p>
-                  <p>Durasi: 4 Jam</p>
-                  <p class="price">Rp 349.000</p>
-                </div>
-              </div>
-              <div
-                class="course-card"
-                data-popular="5"
-                data-price="349000"
-                data-level="advanced"
-                data-duration="240"
-              >
-                <img
-                  src="https://via.placeholder.com/300x150"
-                  alt="Course Image"
-                />
-                <div class="content">
-                  <h3>Advanced React Techniques</h3>
-                  <p>Level: Advanced</p>
-                  <p>Durasi: 4 Jam</p>
-                  <p class="price">Rp 349.000</p>
+                  <div class="col-content">
+                    <h5>Membuat Website Crowdfunding</h5>
+                  </div>
+                  <div class="col-content-info">
+                    <div class="col-mid-info">
+                      <div class="left-col-info">
+                        <p>Level: advanced</p>
+                        <p>Durasi: 2 Jam</p>
+                      </div>
+                      <div class="right-col-info">
+                        <span>Siswa : 100</span>
+                      </div>
+                    </div>
+                    <div class="col-bot-info">
+                      <div class="rating-left">
+                        <span>
+                          <strong>
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              data-prefix="fas"
+                              data-icon="star-half-stroke"
+                              class="svg-inline--fa fa-star-half-stroke me-1"
+                              role="img"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 576 512"
+                            >
+                              <path
+                                fill="currentColor"
+                                d="M288 376.4l.1-.1 26.4 14.1 85.2 45.5-16.5-97.6-4.8-28.7 20.7-20.5 70.1-69.3-96.1-14.2-29.3-4.3-12.9-26.6L288.1 86.9l-.1 .3 0 289.2zm175.1 98.3c2 12-3 24.2-12.9 31.3s-23 8-33.8 2.3L288.1 439.8 159.8 508.3C149 514 135.9 513.1 126 506s-14.9-19.3-12.9-31.3L137.8 329 33.6 225.9c-8.6-8.5-11.7-21.2-7.9-32.7s13.7-19.9 25.7-21.7L195 150.3 259.4 18c5.4-11 16.5-18 28.8-18s23.4 7 28.8 18l64.3 132.3 143.6 21.2c12 1.8 22 10.2 25.7 21.7s.7 24.2-7.9 32.7L438.5 329l24.6 145.7z"
+                              ></path>
+                            </svg>
+                            <span>4.8</span>
+                          </strong>
+                        </span>
+                      </div>
+                      <div class="rating-right">
+                        <span class="rating-right">
+                          <span>
+                            <small>(118) Penilaian</small>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="col-price">
+                      <p class="price">Rp 159.000</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -465,10 +993,88 @@
         </div>
       </section>
     </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-info">
+          <a id="home" class="footer-location">
+            <span class="footer-icon">
+              <img src="img/iconfooter/location.svg" alt="Location" />
+            </span>
+            <span class="footer-logo">
+              <img src="img/iconfooter/logo.png" alt="Skill Span Logo" />
+            </span>
+            <div class="footer-name">
+              <span class="footer-skill">Skill</span>
+              <span class="footer-span">Span</span>
+            </div>
+          </a>
+          <p class="footer-address">
+            Gedung L1, Kampus A Universitas Negeri Jakarta,<br />
+            Jalan Rawamangun Muka, Jakarta Timur,<br />
+            Daerah Khusus Ibukota Jakarta 13220
+          </p>
+          <a href="#" class="footer-address"> Lihat di Google Maps </a>
+          <p>
+            <span class="footer-icon">
+              <img src="img/iconfooter/mail.svg" alt="Email" />
+            </span>
+            Email: <a href="mailto:info@skilvul.com">info@skilspan.com</a>
+          </p>
+          <p>
+            <span class="footer-icon">
+              <img src="img/iconfooter/wa.svg" alt="WhatsApp" />
+            </span>
+            WhatsApp: <a href="tel:+6282323450242">+62821 22xx 0x0x</a>
+          </p>
+        </div>
+        <!-- Area Links -->
+        <div class="footer-links">
+          <h4>Skill Span</h4>
+          <ul>
+            <li><a href="#">Karir</a></li>
+            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#">Partner</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Layanan</h4>
+          <ul>
+            <li><a href="#">Kelas</a></li>
+            <li><a href="#">Beasiswa</a></li>
+            <li><a href="#">Challenge</a></li>
+            <li><a href="#">SkilPath</a></li>
+            <li><a href="#">Webinar</a></li>
+            <li><a href="#">Paket</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Bantuan dan Panduan</h4>
+          <ul>
+            <li><a href="#">Syarat dan Ketentuan</a></li>
+            <li><a href="#">Kebijakan Privasi</a></li>
+            <li><a href="#">Bantuan</a></li>
+          </ul>
+        </div>
+      </div>
 
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>© 2024, PT Skill Span Indonesia.</p>
+        <div class="social-icons">
+          <a href="#"
+            ><img src="img/iconfooter/instagram.svg" alt="Instagram"
+          /></a>
+          <a href="#"
+            ><img src="img/iconfooter/linkedin.svg" alt="LinkedIn"
+          /></a>
+          <a href="#"><img src="img/iconfooter/youtube.svg" alt="YouTube" /></a>
+        </div>
+      </div>
+    </footer>
     <script>
       feather.replace();
     </script>
-    <script src="script.js"></script>
+    <script src="syllabus.js"></script>
   </body>
 </html>
