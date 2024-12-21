@@ -1,3 +1,4 @@
 {
-  "livePreview.defaultPreviewPath": "/KODINGAN UTAMA/index.html"
+  "livePreview.defaultPreviewPath": "/KODINGAN UTAMA/index.html",
+  "liveServer.settings.port": 5501
 }
